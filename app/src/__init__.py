@@ -1,11 +1,19 @@
+import os, logging
 from flask import Flask, jsonify
 from werkzeug.exceptions import HTTPException
 import serverless_wsgi
 
-from src.routes import routes
+print(os.environ)
+
+from src.routes import register_blueprints
 
 app = Flask(__name__)
-app.register_blueprint(routes)
+register_blueprints(app)
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s - %(message)s",
+)
 
 
 @app.errorhandler(HTTPException)

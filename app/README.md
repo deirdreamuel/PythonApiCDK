@@ -31,5 +31,5 @@ pip install -r requirements.txt
 
 ## Running Project
 ```
-flask run --app src --debug run
+flask --app src --debug run
 ```

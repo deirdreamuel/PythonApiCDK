@@ -1,12 +1,11 @@
-#!/usr/bin/env python3
 import aws_cdk as cdk
 
-from infra.stock_api_stack import StockApiStack
+from infra.stack import AppStack
 
 
 app = cdk.App()
 
-StockApiStack(
+AppStack(
     app,
     "StockApiStack",
     env=cdk.Environment(account="582250362323", region="us-east-1"),
